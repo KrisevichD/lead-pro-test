@@ -1,6 +1,7 @@
 import Header from "./components/Header";
 import SideBar from "./components/SideBar";
 import Main from "./components/MainPage/Main";
+import polygon from "/polygon.svg";
 
 export default function App() {
   return (
@@ -17,7 +18,7 @@ export default function App() {
         </div>
       </div>
       <img
-        src="/polygon.svg"
+        src={polygon}
         className="absolute -bottom-50 -right-42 w-152 h-90 blur-3xl -z-2"
       />
     </div>

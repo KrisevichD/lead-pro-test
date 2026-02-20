@@ -1,44 +1,53 @@
 import { useState } from "react";
+import iconAll from "/icons/tags/all.svg";
+import iconFast from "/icons/tags/fast.svg";
+import iconSlots from "/icons/tags/slots.svg";
+import iconCasino from "/icons/tags/casino.svg";
+import iconLive from "/icons/tags/live-casino.svg";
+import iconPopular from "/icons/tags/popular.svg";
+import iconNew from "/icons/tags/new.svg";
+import iconBonus from "/icons/tags/bonus.svg";
+import iconSearch from "/icon-search.svg";
 
 export default function Tags() {
   const tagList = [
     {
-      image: "/icons/tags/all.svg",
+      image: iconAll,
       value: "all",
       label: "Все",
     },
     {
-      image: "/icons/tags/fast.svg",
+      image: iconFast,
       value: "fast",
       label: "Быстрые Игры",
     },
     {
-      image: "/icons/tags/slots.svg",
+      image: iconSlots,
       value: "slots",
       label: "Слоты",
     },
     {
-      image: "/icons/tags/casino.svg",
+      image: iconCasino,
       value: "casino",
       label: "Казино",
     },
     {
-      image: "/icons/tags/live-casino.svg",
+      image: iconLive,
       value: "live",
       label: "Лайв Казино",
     },
     {
-      image: "/icons/tags/popular.svg",
+      image: iconPopular,
       value: "popular",
       label: "Популярные",
     },
     {
-      image: "/icons/tags/new.svg",
+      image: iconNew,
       value: "new",
       label: "Новые",
     },
     {
-      image: "/icons/tags/bonus.svg",
+      image: iconBonus,
       value: "bonus",
       label: "Покупка бонуса",
     },
@@ -47,11 +56,11 @@ export default function Tags() {
   const [selectedTag, setSelectedTag] = useState(0);
 
   return (
-    <div className="flex flex-wrap justify-between overflow-x-auto items-center gap-1 mb-4">
+    <div className="flex flex-wrap justify-between items-center gap-1 mb-4">
       {tagList &&
         tagList.map((element, index) => (
-          <>
-            <div key={element.value} className="flex gap-4">
+          <div key={element.value}>
+            <div className="flex gap-4">
               <div className="relative cursor-pointer">
                 <input
                   type="radio"
@@ -75,10 +84,10 @@ export default function Tags() {
               </div>
             </div>
             <div className="w-6 h-px bg-linear-to-r from-line-1/20 via-line-2/20 to-line-1/4 -rotate-60"></div>
-          </>
+          </div>
         ))}
       <button className="text-xs p-1.5 rounded-md flex items-center gap-1.5 hover:bg-white/10 cursor-pointer">
-        <img src="/icon-search.svg" width={16} height={16} />
+        <img src={iconSearch} width={16} height={16} />
         Найти игру
       </button>
     </div>

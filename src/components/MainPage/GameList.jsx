@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import iconBomb from "/icons/bomb.svg";
 
 export default function GameList({ list }) {
   return (
@@ -31,7 +32,7 @@ function Item({ link, img, label }) {
           />
           <div className="rounded-b-xl bg-focus-bg flex justify-between items-center h-fit w-full p-1">
             <p className="ml-[2.88px] text-xs">{label}</p>
-            <img src="/icons/bomb.svg" width={20} height={20} />
+            <img src={iconBomb} width={20} height={20} />
           </div>
         </div>
       </Link>

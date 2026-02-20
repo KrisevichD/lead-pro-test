@@ -2,6 +2,9 @@ import { Link } from "react-router";
 import GameList from "./GameList";
 import Tags from "./Tags";
 import { GAMES } from "./games";
+import homeIcon from "/icons/home.svg";
+import filterIcon from "/icons/filter.svg";
+import arrowIcon from "/icons/arrow.svg";
 
 export default function Main() {
   return (
@@ -18,7 +21,7 @@ export default function Main() {
 function Breadcrumbs() {
   return (
     <div className="flex items-center gap-1.5 text-xs mb-5">
-      <img src="/icons/home.svg" />
+      <img src={homeIcon} />
       <div className="text-xs">
         <Link to="#">Главная</Link>
         <span> / </span>
@@ -51,7 +54,7 @@ function FiltersList() {
       <Filter label="Сортировать по" options={options2} />
       <Filter label="Провайдер" options={options3} />
       <button className="cursor-pointer">
-        <img src="/icons/filter.svg" />
+        <img src={filterIcon} />
       </button>
     </div>
   );
@@ -63,7 +66,7 @@ function Filter({ label, options }) {
       <p className="absolute left-4.5 -top-1.75 p-0.5 font-light text-xxs text-white/50 bg-select-bg">
         {label}
       </p>
-      <select className="min-w-48 h-9 py-2.5 pl-3 pr-8 font-light text-xs border border-select-border/20 rounded-lg">
+      <select className="min-w-48 h-9 py-2.5 pl-3 pr-8 font-light text-xs border border-select-border/20 rounded-lg appearance-none">
         {options &&
           options.map((element, index) => (
             <option key={index} value={element.value} className="bg-select-bg">
@@ -71,6 +74,7 @@ function Filter({ label, options }) {
             </option>
           ))}
       </select>
+      <img src={arrowIcon} className="absolute top-2.5 right-2 size-4" />
     </div>
   );
 }

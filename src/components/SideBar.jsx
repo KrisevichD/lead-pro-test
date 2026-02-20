@@ -1,12 +1,21 @@
+import mainIcon from "/icons/nav/Vector-0.svg";
+import gamesIcon from "/icons/nav/Vector-1.svg";
+import updateIcon from "/icons/nav/Vector-2.svg";
+import brandsIcon from "/icons/nav/Vector-3.svg";
+import providersIcon from "/icons/nav/Vector-4.svg";
+import bonusIcon from "/icons/nav/Vector-5.svg";
+import appsIcon from "/icons/nav/Vector-6.svg";
+import arrowIcon from "/icons/arrow.svg";
+
 export default function SideBar() {
   const navList = [
-    { icon: "/icons/nav/Vector-0.svg", text: "Главная" },
-    { icon: "/icons/nav/Vector-1.svg", text: "Игры" },
-    { icon: "/icons/nav/Vector-2.svg", text: "Обновления" },
-    { icon: "/icons/nav/Vector-3.svg", text: "Бренды" },
-    { icon: "/icons/nav/Vector-4.svg", text: "Провайдеры" },
-    { icon: "/icons/nav/Vector-5.svg", text: "Бонусы" },
-    { icon: "/icons/nav/Vector-6.svg", text: "Приложения" },
+    { icon: mainIcon, text: "Главная" },
+    { icon: gamesIcon, text: "Игры" },
+    { icon: updateIcon, text: "Обновления" },
+    { icon: brandsIcon, text: "Бренды" },
+    { icon: providersIcon, text: "Провайдеры" },
+    { icon: bonusIcon, text: "Бонусы" },
+    { icon: appsIcon, text: "Приложения" },
   ];
 
   const navSelectedIndex = 1;
@@ -38,7 +47,7 @@ function Item({ icon, text, isSelected }) {
           </div>
           <p className="text-focus pr-7">{text}</p>
           <div className="absolute top-0 right-0 p-2">
-            <img src="/icons/arrow.svg" />
+            <img src={arrowIcon} />
           </div>
         </li>
       ) : (
